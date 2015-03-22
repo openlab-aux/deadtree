@@ -1,4 +1,4 @@
-# deadtree – library management for hackers(paces)
+# deadtree
 deadtree will be an API for managing the books in the [hacklib](https://www.librarything.com/catalog/hacklib) (eventually and hopefully).
 
 ## Draft of the API
@@ -20,8 +20,8 @@ deadtree will be an API for managing the books in the [hacklib](https://www.libr
 
 | Field      | type   | description |
 |------------|--------|-------------|
-| `isbn`     | string or `null`[^1] | ISBN of the book if available else `null` |
-| `idString` | string or `null`[^1] | if `isbn` is specified `null` otherwise a unique String |
+| `isbn`     | string or `null`[1] | ISBN of the book if available else `null` |
+| `idString` | string or `null`[1] | if `isbn` is specified `null` otherwise a unique String |
 
 #### User
 
@@ -31,5 +31,6 @@ deadtree will be an API for managing the books in the [hacklib](https://www.libr
 | `id`       | int    | unique userID |
 | `contact`  | string | human readable contact info[^2] |
 
-[^1]: There should be a better way to represent an ISBN but the type also needs to hold an alternative identifier in the Database.
-[^2]: Note: Database strings often have length limits
+[1]: There should be a better way to represent an ISBN but the type also needs to hold an alternative identifier in the Database.
+
+[2]: Note: Database strings often have length limits
