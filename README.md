@@ -41,7 +41,7 @@ deadtree will be an API for managing the books in the [hacklib](https://www.libr
 |-----------|--------|----------------|----------------|-------------|--------------|------|
 | `/books/` | GET | none | none | Returns a list of all Books | Array of Book Objects | |
 | todo | todo | todo | todo | Allows to get a specific book | todo | |
-| `/books/add` | POST | none | book | Allows addtion of a book | todo: Authentification |
+| `/books/add` | POST | none | book | Allows addtion of a book | todo | todo: Authentification |
 | `/users/` | GET | none | none | Returns a list of all users | Array of User objects | |
 | `/users/:id:` | GET | `id`: int | none | Returns the Object of an specific user | User object | |
 | `/users/register` | POST | todo | todo | Allows registering of a new user | todo | |
