@@ -51,3 +51,6 @@ deadtree will be an API for managing the books in the [hacklib](https://www.libr
 * Authentification
 * ISBN
 * Getting of specific books and Identification of books
+* Authors
+* Publishers?
+* Better Relations, RDF?
