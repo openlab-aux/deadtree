@@ -65,10 +65,12 @@ Standard HTTP Authentification.
 | `name`     | string       | username/nick
 | `info`     | string       | public human readable user information
 | `mail`     | string       | e-mail address of the user
+| `password` | string       | ignored unless user is added
 |==============
 
 === Ideas
 * add URL fields to `author` and `publisher`
+* history of books like in lsmsd
 
 === TODO
 * Storage of ISBN
