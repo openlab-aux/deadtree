@@ -1,0 +1,83 @@
+deadtree – Book management API
+==============================
+Lukas Epple <post@lukasepple.de>
+
+deadtree is intended for managing the books in the hackerspace Openlab Augsburg. Currently this is done using librarything which should be replaced.
+
+The project is in planning/design phase.
+
+== Name
+Needs a better™ name.
+
+== Needed Features
+Needs feedback from gamambel.
+
+* Simple addition of books
+* Advanced querying of books by users
+* Owner management
+* lending management
+
+== Is deadtree obsolete?
+https://github.com/openlab-aux/lsmsd[lsmsd] implements storage management. It should be considered if it is generic enough to be used to manage the library, too. This could be done by storing additional information in a item field using a specially crafted client.
+
+== API draft
+
+=== JSON objects
+
+==== Book
+
+|==============
+| field name | type   | content
+| `title`    | string | title of the book
+| `author`   | int    | id in the database of the author of the book
+| `owner`    | int    | id in the database of the user that owns the book
+| `publisher`| int    | id in the database of the publisher of the book
+| `id`       | int    | database id of the book
+| `isbn`     | ?      | ISBN of the book
+|==============
+
+==== Author
+
+|==============
+| field name | type         | content
+| `id`       | int          | database id of the author
+| `name`     | string       | name of the author
+| `books`    | list of ints | ids of the books the author has written. Ignored in Requests to the server, dynamically computed for Responses
+|==============
+
+==== Publisher
+
+|==============
+| field name | type         | content
+| `id`       | int          | database id of the publisher
+| `name`     | string       | name of the publisher
+| `books`    | list of ints | ids of the books the publisher has published.. Ignored in Requests to the server, dynamically computed for Responses
+|==============
+
+==== User
+
+|==============
+| field name | type         | content
+| `id`       | int          | database id of the user
+| `name`     | string       | username/nick
+| `info`     | string       | public human readable user information
+| `mail`     | string       | e-mail address of the user
+|==============
+
+=== Ideas
+* add URL fields to `author` and `publisher`
+
+=== TODO
+* Storage of ISBN
+* Lending management
+* Specification of the endpoints
+** Authentification
+
+== Storage
+Since glaxx experience with https://www.mongodb.org/[mongodb] while programming https://github.com/openlab-aux/lsmsd[lsmsd] has been good the current idea is to use mongodb as storage.
+
+== API programming
+My Idea is to use Haskell and the framework https://haskell-servant.github.io[servant].
+
+== Links
+- http://www.kalzumeus.com/2010/06/17/falsehoods-programmers-believe-about-names/[Falsehoods Programmers believe about Names]
