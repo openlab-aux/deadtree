@@ -22,6 +22,9 @@ https://github.com/openlab-aux/lsmsd[lsmsd] implements storage management. It sh
 
 == API draft
 
+=== Authentification
+Standard HTTP Authentification.
+
 === JSON objects
 
 ==== Book
